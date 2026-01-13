@@ -2,9 +2,52 @@
 
 - RIGA 11 E 12:  prendo il div dall'HTML, poi lo svuoto.
 
+
 - RIGA 44: Funzione di test per i grafici.
 
-- RIGA 45:  Utils è una libreria di Chart.js.
-            months è un metodo di Utils che crea un array di mesi.  
-            count è il numero di mesi da creare.
+
+- RIGA 53: function getTemperaturePoints(weatherData)
+  Funzione che trasforma i dati meteo in punti per il grafico.
+  weatherData: è il parametro della funzione, cioè il valore che le passerai quando la chiamerai.
+  Qui ci aspettiamo che weatherData sia un array di oggetti.
+ 
+  weatherData.map(...)
+  map è un metodo degli array. Prende una funzione come argomento e:
+  - la esegue su ogni elemento dell’array,
+  - restituisce un nuovo array con il risultato di quella funzione.
+    Se weatherData ha 3 elementi, anche il risultato di map avrà 3 elementi, uno per ciascun data.
+
+  La funzione freccia data => ({ ... })
+  data è il nome che diamo al singolo elemento di weatherData mentre map scorre l’array.
+  Se weatherData[0] è { time: '10:00', temperature: 18 }, allora al primo giro data sarà proprio questo oggetto.
+  => indica che è una funzione freccia (arrow function).
+  La parte tra parentesi tonde ({ ... }) è l’oggetto che vogliamo restituire per ogni elemento.
+
+  L’oggetto restituito per ogni elemento
+  Per ogni data (cioè per ogni misurazione del meteo), creiamo un nuovo oggetto con questa forma:
+  - x: prende il valore di data.time
+   (il tempo finisce sull’asse X, come indicato nel commento).
+  - y: prende il valore di data.temperature
+   (la temperatura finisce sull’asse Y)
+
+  x e y sono solo nomi di proprietà. (sono proprietà fisse per chart.js. In altre librerie potrebbero cambiare)
+  Puoi cambiarli come vuoi, non hanno nulla di “magico” o obbligatorio in JavaScript.
+  Li vedi spesso perché:
+   - molti grafici (Chart.js, ApexCharts, ecc.) si aspettano che i punti abbiano proprietà chiamate x e y;
+   - è una convenzione comoda per rappresentare coordinate.
+
+  data => ({ x: data.time, y: data.temperature }) è una arrow function ed è una forma compatta per scrivere:
+
+  function (data) {
+    return { x: data.time, y: data.temperature };
+}
+
+
+
+
+
+
+
+
+
     

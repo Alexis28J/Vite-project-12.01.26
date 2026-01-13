@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "viteproj",
   "private": true,
@@ -16,22 +15,3 @@
     "chart.js": "^4.5.1"
   }
 }
-=======
-{
-  "name": "viteproj",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^7.2.4"
-  },
-  "dependencies": {
-    "chart.js": "^4.5.1"
-  }
-}
->>>>>>> 399b4d671d60e612ab0e8c242ffe3c4ff4036b27

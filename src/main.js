@@ -5,7 +5,7 @@ import { Chart, LineController, CategoryScale, LinearScale, PointElement, LineEl
 const service = new WeatherService();
 
 service.getWeatherData()
-    .then(weatherData => displayWeather(weatherData));
+    .then(weatherData => displayWeather(weatherData));   //weatherData è un array di oggetti meteo
 
 
 function displayWeather(weatherData) {
@@ -14,9 +14,9 @@ function displayWeather(weatherData) {
     const rainPoints = getRainPoints(weatherData);
     const windPoints = getWindPoints(weatherData);
 
-    testChart("temperature-chart", temperaturepoints);
-    testChart("rain-chart", rainpoints);
-    testChart("wind-chart", windpoints);
+    testChart("temperature-chart", temperaturePoints);
+    testChart("rain-chart", rainPoints);
+    testChart("wind-chart", windPoints);
 
     const container = document.getElementById('app');  //*
     container.innerHTML = "";  //*
@@ -50,24 +50,32 @@ function displayWeather(weatherData) {
 
 }
 
-function getTemperaturePoints(weatherData) {
-     const { times, temperatures} = weatherData.hourly;
+function getTemperaturePoints(weatherData) {  //*
 
-    return times.map((t, i) => ({
-        x: new Date(t).getTime(),
-        y: temperatures[i]
+    return weatherData.map(data => ({  
+        x: data.time,         //sull'asse x metto il tempo
+        y: data.temperature   //sull'asse y metto la temperatura
     }));
+
+    
 }
 
-function getRainPoints(weatherData) {
-    return [];
+function getRainPoints(weatherData) {   
+    return weatherData.map(data => ({
+        x: data.time,     
+        y: data.rain
+    }));
+   
 }
 
 function getWindPoints(weatherData) {
-    return [];
+    return weatherData.map(data => ({  
+        x: data.time,
+        y: data.wind
+    }));
 }
 
-function testChart(canvasId, dataPoints) {  //*
+function testChart(canvasId, dataPoints) {   
 
     //[{x:"2026-01-13T00:00", y:9},
     //{x:"2026-01-13T01:00", y:8},

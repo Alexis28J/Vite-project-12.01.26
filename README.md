@@ -1,4 +1,4 @@
- Lezione di lunedì 12 gennaio:
+no Lezione di lunedì 12 gennaio:
 
  - https://vite.dev/:  Vite è un moderno strumento di sviluppo (build tool) e server per applicazioni web che   offre un'esperienza di sviluppo front-end estremamente veloce e snella.
 
