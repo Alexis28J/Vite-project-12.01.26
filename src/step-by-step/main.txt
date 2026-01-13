@@ -1,3 +1,10 @@
 * main.js
 
 - RIGA 11 E 12:  prendo il div dall'HTML, poi lo svuoto.
+
+- RIGA 44: Funzione di test per i grafici.
+
+- RIGA 45:  Utils è una libreria di Chart.js.
+            months è un metodo di Utils che crea un array di mesi.  
+            count è il numero di mesi da creare.
+    
