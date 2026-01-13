@@ -85,6 +85,10 @@ export class WeatherService {  //*
             newArray.push(hourData);
         }
         return newArray;
+
+        //[{time:"2026-01-17T14:00", temperature: 14, rain: 3, code: 0, wind: 12},
+        // {time:"2026-01-17T15:00", temperature: 17, rain: 3, code: 0, wind: 12},
+        // {time:"2026-01-17T16:00", temperature: 16, rain: 3, code: 0, wind: 12}]
     }
 
 }

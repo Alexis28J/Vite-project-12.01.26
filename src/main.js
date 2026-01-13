@@ -50,15 +50,20 @@ function displayWeather(weatherData) {
 
 }
 
-function getTemperaturePoints(meteoData) {
+function getTemperaturePoints(weatherData) {
+     const { times, temperatures} = weatherData.hourly;
+
+    return times.map((t, i) => ({
+        x: new Date(t).getTime(),
+        y: temperatures[i]
+    }));
+}
+
+function getRainPoints(weatherData) {
     return [];
 }
 
-function getRainPoints(meteoData) {
-    return [];
-}
-
-function getWindPoints(meteoData) {
+function getWindPoints(weatherData) {
     return [];
 }
 
