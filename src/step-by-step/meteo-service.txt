@@ -1,0 +1,20 @@
+* meteo-service.js
+
+- RIGA 1: classe per gestire il servizio meteo.
+
+
+- DALLA RIGA 7 FINO ALL'11: 
+  getData(data). Funzione per prendere i dati dall'api. Il parametro non è necessario perché l'URL è statico.
+  La fetch fa una richiesta http all'url specificato.
+  resp => resp.json(): trasforma la risposta in formato json.
+  data => this.transformData(data): chiamata alla funzione di trasformazione dei dati.
+  transformedData => console.log(transformedData): stampa i dati trasformati nella console.
+
+
+- RIGA 14: il parametro non è necessario essendo già accessibile nella funzione getData.
+
+
+- RIGA 41: Non è per niente necessario dividerli (fare i log ogni riga di codice) ma nel nostro caso ci permette di controllare meglio possibili errori.
+
+
+- RIGA 69: va bene scritto così ma c'è un modo più facile (valido solo se la proprietà e il valore hanno lo stesso nome).

@@ -1,0 +1,3 @@
+* main.js
+
+- RIGA 11 E 12:  prendo il div dall'HTML, poi lo svuoto.
