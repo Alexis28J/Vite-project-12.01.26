@@ -1,6 +1,7 @@
 import "./style.css";
 import { WeatherService } from "./meteo-service.js";
-import { Chart, LineController, CategoryScale, LinearScale, PointElement, LineElement } from "chart.js";
+import { Chart, LineController, CategoryScale, LinearScale, PointElement, LineElement, TimeScale } from "chart.js";
+import 'chartjs-adapter-moment';
 
 const service = new WeatherService();
 
@@ -52,16 +53,38 @@ function displayWeather(weatherData) {
 
 function getTemperaturePoints(weatherData) {  //*
 
-    return weatherData.map(data => ({  
-        x: data.time,         //sull'asse x metto il tempo
-        y: data.temperature   //sull'asse y metto la temperatura
-    }));
+    //COL CICLO FOR
+    console.log("Weather data for temp", weatherData);
 
+    const points = [];
+
+    for (const data of weatherData) {
+        const point = {
+            x: data.time,
+            y: data.temperature
+        };
+        points.push(point);
+    }
+    return points;
+
+    //COL MAP (METODO DEGLI ARRAY)
+    // return weatherData.map(data => ({  
+    //     x: data.time,         //sull'asse x metto il tempo
+    //     y: data.temperature   //sull'asse y metto la temperatura
+    // }));
     
+
 }
 
 function getRainPoints(weatherData) {   
-    return weatherData.map(data => ({
+
+    // return weatherData.map(data => {
+    //     return {   
+    //     x: data.time,     
+    //     y: data.rain
+    // }});
+
+    return weatherData.map(data => ({   //*
         x: data.time,     
         y: data.rain
     }));
@@ -75,13 +98,18 @@ function getWindPoints(weatherData) {
     }));
 }
 
-function testChart(canvasId, dataPoints) {   
+function testChart(canvasId, dataPoints) {
+    
+    console.log("Data points", dataPoints);
+    
 
     //[{x:"2026-01-13T00:00", y:9},
     //{x:"2026-01-13T01:00", y:8},
     //{x:"2026-01-13T02:00", y:7},...]
 
-    Chart.register(LineController, CategoryScale, LinearScale, PointElement, LineElement);
+    Chart.register(LineController, CategoryScale, LinearScale, PointElement, LineElement, TimeScale);
+
+    //Chart.register è un metodo statico della classe Chart che serve per registrare i componenti che vogliamo usare nel grafico
 
     const labels = ["marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre"]
     const data = {
@@ -98,6 +126,13 @@ function testChart(canvasId, dataPoints) {
     const config = {
         type: 'line',
         data: data,
+        options: {
+        scales: {
+            x: {
+                type: 'time',
+            }
+        }
+    }
     };
 
     const canvas = document.getElementById(canvasId);

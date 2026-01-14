@@ -1,4 +1,4 @@
-no Lezione di lunedì 12 gennaio:
+Lezione di lunedì/martedì 12/13 gennaio:
 
  - https://vite.dev/:  Vite è un moderno strumento di sviluppo (build tool) e server per applicazioni web che   offre un'esperienza di sviluppo front-end estremamente veloce e snella.
 
@@ -25,3 +25,8 @@ Può essere dev per far partire (è come se usassimo Go Live), build per minific
 - Per reinstallare i pacchetti (perché Github non li salva) scrivere sul terminale npm install (install o i)
 
 - https://open-meteo.com/ Open Meteo per prendere le API del meteo
+
+
+Lezione di mercoledì 14 gennaio 2026:
+
+- https://github.com/engperini/open-meteo-icons  Icone per il nostro progetto
