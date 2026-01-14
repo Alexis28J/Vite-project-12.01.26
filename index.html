@@ -1,23 +1,59 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="./src/style.css"> -->
-    <title>Vite Project</title>
-  </head>
-  <body>
-    <header>
-      <h1>Super Meteo Genova: Sampierdarena</h1>
-    </header>
-     <div style="width: 800px;"><canvas id="temperature-chart"></canvas></div>
-     <div style="width: 800px;"><canvas id="rain-chart"></canvas></div>
-     <div style="width: 800px;"><canvas id="wind-chart"></canvas></div>
-    <div id="app"></div>
-    <footer>
-      <p>© 2024 Super Meteo Genova</p>
-    </footer>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="./src/style.css"> -->
+  <title>Vite Project</title>
+</head>
+
+<body>
+  <header>
+    <h1>Super Meteo Genova: Sampierdarena</h1>
+  </header>
+
+  <main>
+    <div>
+      <div id="app"></div>
+    </div>
+
+    <div id="days-container">
+
+      <div class="day-box" id="day-1">
+        <h2 class="day-title"></h2>
+        <div class="cards"></div>
+      </div>
+
+      <div class="day-box" id="day-2">
+        <h2 class="day-title"></h2>
+        <div class="cards"></div>
+      </div>
+
+      <div class="day-box" id="day-3">
+        <h2 class="day-title"></h2>
+        <div class="cards"></div>
+      </div>
+
+    </div>
+
+
+    <div class="chart-container">
+      <h2>TEMPERATURA</h2> <canvas id="temperature-chart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>PRECIPITAZIONI</h2> <canvas id="rain-chart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>VENTO</h2> <canvas id="wind-chart"></canvas>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Super Meteo Genova</p>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

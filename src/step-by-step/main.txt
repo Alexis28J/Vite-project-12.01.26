@@ -1,5 +1,8 @@
 * main.js
 
+- RIGA 9: weatherData è un array di oggetti meteo
+
+
 - RIGA 11 E 12:  prendo il div dall'HTML, poi lo svuoto.
 
 

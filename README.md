@@ -31,3 +31,13 @@ Lezione di mercoledì 14 gennaio 2026:
 
 - https://github.com/engperini/open-meteo-icons  Icone per il nostro progetto
 - https://www.chartjs.org/docs/latest/axes/cartesian/time.html
+- Passaggi per fare la commit tramite il terminal:
+  - eseguire git config user.name Alexis28J
+  - eseguire git config user.email jordy2806@hotmail.com
+  - eseguire git add . (per aggiungere tutte le modifiche)
+    o eseguire git add nome_file.ext (per un file specifico).
+  - eseguire git commit -m "Il tuo messaggio descrittivo" (sostituisci "Il tuo messaggio    descrittivo" con un testo breve e chiaro).
+  - eseguire git push 
+    o git push origin nome-branch (sostituisci nome-branch con il nome del tuo branch, es. main o master).
+
+- https://copilot.microsoft.com/shares/tFotmaxcNswfSmcf7iLLS  (richiesta a Copilot per modifiche)
