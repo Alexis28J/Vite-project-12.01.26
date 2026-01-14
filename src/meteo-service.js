@@ -81,7 +81,7 @@ export class WeatherService {  //*
                 rain,
                 code,
                 wind
-            }
+            };
             newArray.push(hourData);
         }
         return newArray;

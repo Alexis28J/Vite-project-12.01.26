@@ -30,3 +30,4 @@ Può essere dev per far partire (è come se usassimo Go Live), build per minific
 Lezione di mercoledì 14 gennaio 2026:
 
 - https://github.com/engperini/open-meteo-icons  Icone per il nostro progetto
+- https://www.chartjs.org/docs/latest/axes/cartesian/time.html

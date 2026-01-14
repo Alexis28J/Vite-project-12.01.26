@@ -38,9 +38,13 @@ function displayWeather(weatherData) {
         spanTemp.innerHTML = data.temperature;
         card.appendChild(spanTemp);
 
-        const spanCode = document.createElement('span');
-        spanCode.innerHTML = data.code;
-        card.appendChild(spanCode);
+        // const spanCode = document.createElement('span');
+        // spanCode.innerHTML = data.code;
+        // card.appendChild(spanCode);
+
+        const imgCode = document.createElement('img');
+        imgCode.src = "./icons/" + data.code + "d.png";
+        card.appendChild(imgCode);
 
         const spanWind = document.createElement('span');
         spanWind.innerHTML = data.wind;
@@ -111,12 +115,13 @@ function testChart(canvasId, dataPoints) {
 
     //Chart.register è un metodo statico della classe Chart che serve per registrare i componenti che vogliamo usare nel grafico
 
-    const labels = ["marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre"]
+    // const labels = ["marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre"]
+    const labels = []
     const data = {
         labels: labels,
         datasets: [{
             label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: dataPoints,
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             tension: 0.1
