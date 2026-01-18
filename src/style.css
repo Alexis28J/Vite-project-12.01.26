@@ -1,7 +1,37 @@
-* {
+/* * {
   border: 1px solid red;
   box-sizing: border-box;
+} */
+
+header h1 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+  margin: 30px 0;
+  color: midnightblue;
+  /* colore scuro e leggibile */
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
+  /* contorno chiaro */
 }
+
+/* Una linea decorativa sotto il titolo */
+header {
+  border-bottom: 4px solid midnightblue;
+  /* linea scura */
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+
+body {
+  margin: 0;
+  background-image: url("https://cdn.pixabay.com/photo/2019/05/19/23/47/clouds-4215608_1280.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 
 #app {
   display: flex;
@@ -10,100 +40,173 @@
   margin-top: 30px;
 }
 
-/* QUADRO METEO */ .card { 
-  flex: 1; /* si restringe per evitare overflow */ 
-  min-width: 120px; /* limite minimo */ 
-  max-width: 150px; /* limite massimo */ 
-  background: #fafafa; 
-  border-radius: 12px; 
-  padding: 12px; 
-  border: 3px solid #d4c4a8; /* cornice elegante */ 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+/* QUADRO METEO */
+.card {
+  flex: 1;
+  /* si restringe per evitare overflow */
+  min-width: 120px;
+  /* limite minimo */
+  max-width: 150px;
+  /* limite massimo */
+  background: rgb(210, 223, 238);
+  border-radius: 12px;
+  padding: 12px;
+  border: 3px solid #d4c4a8;
+  /* cornice elegante */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
- /* Effetto hover */ 
- .card:hover { 
-  transform: translateY(-4px); 
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25); 
+/* Effetto hover */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-.cards { 
-  display: flex; 
-  flex-direction: row; 
-  flex-wrap: nowrap; 
-  gap: 14px; 
-  width: 100%; 
-} 
-
-/* Orario */ 
-.card span { 
-  font-size: 16px; 
-  font-weight: 600; 
-  margin-bottom: 8px; 
-  color: #444; 
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 14px;
+  width: 100%;
 }
 
-/* Icona meteo */ 
-.card img { 
-  width: 70px; 
-  height: 70px; 
-  object-fit: contain; 
-  margin-top: 5px; 
+/* Orario */
+.card span {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* Icona meteo */
+.card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-top: 5px;
 }
 
 .chart-container {
   width: 800px;
-  margin: 40px auto; /* centra orizzontalmente */
-  text-align: center; /* centra il titolo */
+  margin: 40px auto;
+  /* centra orizzontalmente */
+  text-align: center;
+  /* centra il titolo */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border:3px solid darkslategray;
+  /* bianco semitrasparente */
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  /* effetto vetro */
+}
+
+.chart-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  font-weight: 700;
 }
 
 
-/* Contenitore dei giorni (verticale) */ 
-#days-container { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 40px; 
-  margin-top: 40px; 
+/* Contenitore dei giorni (verticale) */
+#days-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-/* Box del singolo giorno */ 
-.day-box { 
-  background: #ffffff; 
-  padding: 20px; 
-  border-radius: 14px; 
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
-  border: 2px solid #e0e0e0; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
+/* Box del singolo giorno */
+.day-box {
+  background: rgba(255, 255, 255, 0.75);
+  /* bianco semitrasparente */
+  backdrop-filter: blur(6px);
+  /* effetto vetro */
+  -webkit-backdrop-filter: blur(6px);
+  /* compatibilità Safari */
+
+  padding: 20px;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  /* glow leggero */
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  /* Effetto glow leggero attorno al contenitore */
+  opacity: 0;
+  /* per animazione */
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Titolo del giorno */ 
-.day-title { 
-  margin-bottom: 20px; 
-  font-size: 22px; 
-  font-weight: bold; 
-  color: #333; 
+
+/* Animazione di comparsa (fade + slide up) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Contenitore dei quadri (orizzontale, senza overflow) */ 
-.cards { 
-  display: flex; 
-  flex-direction: row; 
-  flex-wrap: nowrap; 
-  gap: 14px; 
-  width: 100%; 
-} 
+#day-1 { animation-delay: 0.1s; }
+#day-2 { animation-delay: 0.3s; }
+#day-3 { animation-delay: 0.5s; }
+
+
+/* Titolo del giorno */
+.day-title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+
+
+/* Bordo colorato diverso per ogni giorno */
+#day-1 {
+  border: 3px solid #007bff;
+  /* blu */
+}
+
+#day-2 {
+  border: 3px solid #ff9800;
+  /* arancione */
+}
+
+#day-3 {
+  border: 3px solid #4caf50;
+  /* verde */
+}
+
+
+/* Contenitore dei quadri (orizzontale, senza overflow) */
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 14px;
+  width: 100%;
+}
 
 
 /* Tooltip nascosto di default */
 .tooltip {
   position: absolute;
-  bottom: 110%; /* sopra il quadro */
+  bottom: 110%;
+  /* sopra il quadro */
   left: 50%;
   transform: translateX(-50%);
   background: #333;
@@ -115,7 +218,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
 
@@ -134,4 +237,12 @@
 /* Mostra tooltip al passaggio del mouse */
 .card:hover .tooltip {
   opacity: 1;
+}
+
+/* Icona meteo accanto al titolo */
+.title-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
 }

@@ -184,7 +184,14 @@ function fillDayBox(id, dataArray, label) {
     });
 
     // Imposto il titolo: Oggi (Mercoledì 14 gennaio)
-    title.textContent = `${label} (${formattedDate})`;
+    //title.textContent = `${label} (${formattedDate})`;
+
+    // Imposto il titolo con icona
+    title.innerHTML = `
+    <img src="./icons/${dataArray[0].code}d.png" class="title-icon">
+    ${label} (${formattedDate})
+`;
+
 
     // Svuoto eventuali dati precedenti
     cardsContainer.innerHTML = "";

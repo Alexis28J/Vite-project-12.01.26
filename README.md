@@ -41,3 +41,4 @@ Lezione di mercoledì 14 gennaio 2026:
     o git push origin nome-branch (sostituisci nome-branch con il nome del tuo branch, es. main o master).
 
 - https://copilot.microsoft.com/shares/tFotmaxcNswfSmcf7iLLS  (richiesta a Copilot per modifiche)
+  https://copilot.microsoft.com/shares/aRvBWydrABMv9zxG6EfAN

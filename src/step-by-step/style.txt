@@ -1,0 +1,9 @@
+* style.css
+
+- RIGA 16:  
+
+La versione standard (background-clip: text) non è ancora supportata da tutti i browser, quindi:
+    Chrome/Edge/Safari → usano -webkit-background-clip
+    Firefox → non supporta ancora il clipping del testo con gradiente
+
+Quindi il tuo gradiente funzionerà comunque grazie al prefisso -webkit-. 
